@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app.views import log_event, retrieve_all_events, retrieve_event_by_id
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('logevent/<str:event_id>/<str:event_type>/<str:event_data>', log_event, name='logevent'),
+    path('event/<str:event_id>', retrieve_event_by_id, name='get_event_by_id'),
+    path('event', retrieve_all_events, name='get_all_events')
 ]
