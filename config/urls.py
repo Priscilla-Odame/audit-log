@@ -15,11 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import log_event, retrieve_all_events, retrieve_event_by_id
+from app.views import (log_event, retrieve_all_events, retrieve_event_by_id, login,
+                        delete_event, delete_all_events, hard_delete_event,
+                        create_user, create_superuser, list_all_users, delete_user)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('logevent/<str:event_id>/<str:event_type>/<str:event_data>', log_event, name='logevent'),
-    path('event/<str:event_id>', retrieve_event_by_id, name='get_event_by_id'),
-    path('event', retrieve_all_events, name='get_all_events')
+    path('adduser/<str:username>/<str:password>', create_user , name='addaccount'),
+    path('addadmin/<str:username>/<str:password>', create_superuser , name='addadmin'),
+    path('login/<str:username>/<str:password>', login, name='login'),
+    path('users/<str:username>/<str:password>', list_all_users , name='listusers'),
+    path('deleteuser/<str:username>/<str:password>', delete_user , name='deleteuser'),
+    path('logevent/<str:username>/<str:password>/<str:event_id>/<str:event_type>/<str:event_data>', log_event, name='logevent'),
+    path('event/<str:username>/<str:password>/<str:event_id>', retrieve_event_by_id, name='get_event_by_id'),
+    path('deleteevent/<str:username>/<str:password>/<event_id>', delete_event, name='delete_event'),
+    path('deleteevent/<str:username>/<str:password>', delete_all_events, name='delete_all_event'),
+    path('harddeleteevent/<str:username>/<str:password>', hard_delete_event, name='hard_delete_event'),
+    path('event/<str:username>/<str:password>', retrieve_all_events, name='retrieve_all_events')
 ]
