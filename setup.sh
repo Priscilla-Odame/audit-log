@@ -10,7 +10,7 @@ echo "DBHOST='auditlogdb.c0cpmzcveu94.us-west-2.rds.amazonaws.com'" >> config/.e
 
 #install virtual environment
 echo "creating virtual environment..."
-#sudo apt install python3-venv -y
+sudo apt install python3-venv -y
 python3 -m venv venv
 
 #install pip if it does not exist
@@ -28,6 +28,10 @@ pip install -r requirements.txt
 #run migrations
 echo "Running migrations..."
 python3 manage.py migrate
+
+#run unit tests
+echo "Running unit tests..."
+python3 manage.py test
 
 #run the server
 echo "Running the server in the background..."
