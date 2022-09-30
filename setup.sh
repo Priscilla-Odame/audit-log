@@ -3,10 +3,10 @@ echo "creating  .env file..."
 echo "SECRET_KEY='-@6w=yzted3fzu^j)c@+xjg7@kru##tk1b%sul=gi@$^f!0!)3'"> config/.env
 echo  "DEBUG='True'" >> config/.env
 echo "DBNAME='auditlogdb'" >> config/.env
-echo "DBPASSWORD='auditlog_password'" >> config/.env
-echo "DBUSER='auditloguser'" >> config/.env
+echo "DBPASSWORD='5632fevbd8y3f673r'" >> config/.env
+echo "DBUSER='postgres'" >> config/.env
 echo "DBPORT='5432'" >> config/.env
-echo "DBHOST='auditlogdb.c0cpmzcveu94.us-west-2.rds.amazonaws.com'" >> config/.env
+echo "DBHOST='auditlog.cxv5txmsqnv9.us-west-1.rds.amazonaws.com'" >> config/.env
 
 #install virtual environment
 echo "creating virtual environment..."

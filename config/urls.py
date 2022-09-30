@@ -33,3 +33,6 @@ urlpatterns = [
     path('harddeleteevent/<str:username>/<str:password>', hard_delete_event, name='hard_delete_event'),
     path('event/<str:username>/<str:password>', retrieve_all_events, name='retrieve_all_events')
 ]
+
+handler404 = "app.views.page_not_found_view"
+handler500 = "app.views.custom_error_view"

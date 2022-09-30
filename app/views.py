@@ -158,3 +158,10 @@ def delete_all_events(request,username, password, **kwaargs):
             return JsonResponse("User credentials not correct", safe=False)
     except ObjectDoesNotExist:
         return JsonResponse(f"User does not exist", safe=False)
+
+#Handling eceptions globallly
+def page_not_found_view(request, exception):
+    return JsonResponse("Requested url does not exist", safe=False)
+
+def custom_error_view(request, exception=None):
+    return JsonResponse("500 server error", safe=False)
