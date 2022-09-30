@@ -46,7 +46,7 @@ If you do not have virtualenv or venv installed, follow these links to set them 
 
 5. Run ```python manage.py migrate``` or ```python3 manage.py migrate``` to install new fields into the database.
 
-6. Run ```python manage.py runserver``` or <python3 manage.py runserver>.
+6. Run ```python manage.py runserver``` or ```<python3 manage.py runserver>```.
 Your app is up!
 
 7. To run tests, run ```python manage.py test ``` or ```python3 manage.py test```
