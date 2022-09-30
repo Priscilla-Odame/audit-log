@@ -15,7 +15,7 @@ python3 -m venv venv
 
 #install pip if it does not exist
 echo "installing pip..."
-sudo apt-get install python3-pip
+sudo apt-get install python3-pip -y
 
 #activate virtual env
 echo "Activating virtual environment..."
