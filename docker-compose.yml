@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./
+    command: flask --app api run
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env.example
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=auditlog_user
+      - POSTGRES_PASSWORD=auditlog_pass
+      - POSTGRES_DB=db_auditlog
+    ports:
+      - 5432:5432
+    
+volumes:
+  postgres_data:
